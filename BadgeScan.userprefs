@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{73E304DD-EFEB-4E89-B289-CE1B2B8DA0D7}|Default">
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.cf1bad082d9bfd6190bafdb90c44c0ea7ceeacaa" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.BadgeScan.iOS>
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BadgeScan" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.LGD72298f984dc" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.BadgeScan HideGettingStarted="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
+    <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <zxing:ZXingScannerView x:Name="scanner" OnScanResult="OnScanResult" />
+            <zxing:ZXingDefaultOverlay TopText="Press Scan" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
+        </Grid>
+        <WebView x:Name="Foto" HeightRequest="200" Source="https://nimamazloumi.files.wordpress.com/2018/02/person.png?h=200"/>
+        <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
+        <Button x:Name="ScanButton" Text="Scan" Pressed="Button_Pressed" />
+    </StackLayout>
+</ContentPage>
