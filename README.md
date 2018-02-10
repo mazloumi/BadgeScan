@@ -15,7 +15,6 @@ First configure the `Settings.cs` file:
 
  - **Resource**: Provide the URL for your trial Dynamics CRM 365 Online system.
  - **Application Id**: Go to your Azure trial and register this application and grant permissions.
- - **ImageUrl**: Enter a valid link to an image here as a place holder, which is shown until the app shows the photo of the contact.
  - **SearchAttribute**: Tell you app what attribute of the Entity Contact should be used for the search.
 
 Now, create some sample data:
