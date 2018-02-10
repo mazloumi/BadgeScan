@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace BadgeScan.Droid
 {
-    [Activity(Label = "BadgeScan", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "BadgeScan", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
        protected override void OnCreate(Bundle bundle)
