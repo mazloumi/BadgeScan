@@ -14,11 +14,9 @@ namespace BadgeScan
 
         void OnScanResult(Result result)
         {
-            scanner.IsScanning = false;
-            scanner.IsAnalyzing = false;
-
             Device.BeginInvokeOnMainThread(() =>
             {
+                Toggle(null, null);
                 var res = result.Text;
                 Task.FromResult(Search(res));
             });
@@ -31,18 +29,18 @@ namespace BadgeScan
             base.OnDisappearing();
         }
 
-        void Button_Pressed(object sender, EventArgs e)
+        void Toggle(object sender, EventArgs e)
         {
+            ScanButton.Text = scanner.IsEnabled ? "Start" : "Stop";
             scanner.IsScanning = !scanner.IsScanning;
             scanner.IsAnalyzing = !scanner.IsAnalyzing;
             scanner.IsEnabled = !scanner.IsEnabled;
-            Name.Text = "...";
             Foto.Source = "https://nimamazloumi.files.wordpress.com/2018/02/person.png?h=200";
-            ScanButton.Text = scanner.IsEnabled ? "Start" : "Stop";
         }
 
         public async Task Search(string code)
         {
+            Name.Text = $"Searching for {code}";
             var contact = await ServiceProxy.GetContact(code);
             Name.Text = $"{contact.firstname} {contact.lastname}";
             Foto.Source = $"{Settings.Resource}{contact.entityimage_url}";

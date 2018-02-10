@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{E8C8AC97-3400-4655-84DA-C9DCC9D74464}|Default">
-  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.cf1bad082d9bfd6190bafdb90c44c0ea7ceeacaa" automaticSigning="False">
+﻿<Properties StartupConfiguration="{73E304DD-EFEB-4E89-B289-CE1B2B8DA0D7}|Default">
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F6F0406F-E97A-42F9-9A99-3DAABAD4CE0B" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.BadgeScan.iOS>
   <MonoDevelop.Ide.Workbench>
@@ -12,7 +12,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.ItemProperties.BadgeScan HideGettingStarted="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
