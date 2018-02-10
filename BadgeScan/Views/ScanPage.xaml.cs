@@ -33,12 +33,12 @@ namespace BadgeScan
 
         void Button_Pressed(object sender, EventArgs e)
         {
-            scanner.IsScanning = true;
-            scanner.IsAnalyzing = true;
-            scanner.IsEnabled = true;
+            scanner.IsScanning = !scanner.IsScanning;
+            scanner.IsAnalyzing = !scanner.IsAnalyzing;
+            scanner.IsEnabled = !scanner.IsEnabled;
             Name.Text = "...";
             Foto.Source = "https://nimamazloumi.files.wordpress.com/2018/02/person.png?h=200";
-            ScanButton.Text = "Searching";
+            ScanButton.Text = scanner.IsEnabled ? "Start" : "Stop";
         }
 
         public async Task Search(string code)
@@ -46,7 +46,6 @@ namespace BadgeScan
             var contact = await ServiceProxy.GetContact(code);
             Name.Text = $"{contact.firstname} {contact.lastname}";
             Foto.Source = $"{Settings.Resource}{contact.entityimage_url}";
-            ScanButton.Text = "Scan";
         }
     }
 }
