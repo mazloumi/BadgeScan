@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing;
@@ -10,6 +11,7 @@ namespace BadgeScan
         public ScanPage()
         {
             InitializeComponent();
+            Foto.Source = ImageSource.FromResource("Person.png");
         }
 
         void OnScanResult(Result result)
@@ -35,15 +37,26 @@ namespace BadgeScan
             scanner.IsScanning = !scanner.IsScanning;
             scanner.IsAnalyzing = !scanner.IsAnalyzing;
             scanner.IsEnabled = !scanner.IsEnabled;
-            Foto.Source = "https://nimamazloumi.files.wordpress.com/2018/02/person.png?h=200";
+            Foto.Source = ImageSource.FromResource("Person.png");
         }
 
         public async Task Search(string code)
         {
             Name.Text = $"Searching for {code}";
-            var contact = await ServiceProxy.GetContact(code);
-            Name.Text = $"{contact.firstname} {contact.lastname}";
-            Foto.Source = $"{Settings.Resource}{contact.entityimage_url}";
+
+            Image img = new Image();
+            try
+            {
+                var contact = await ServiceProxy.GetContact(code);
+                Name.Text = $"{contact.firstname} {contact.lastname}";
+                img.Source = ImageSource.FromStream(() => new MemoryStream(System.Convert.FromBase64String(contact.entityimage)));
+            }
+            catch
+            {
+                Name.Text = "Person not found";
+                img.Source = ImageSource.FromResource("Person.png");
+            }
+            Foto.Source = img.Source;
         }
     }
 }

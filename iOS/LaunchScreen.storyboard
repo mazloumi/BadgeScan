@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,33 +18,33 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" image="Barcode.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
-                                <rect key="frame" x="392" y="516.5" width="240" height="203"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Barcode.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="197">
+                                <rect key="frame" x="87" y="201.5" width="240" height="203"/>
                                 <constraints>
-                                    <constraint id="218" firstItem="197" firstAttribute="height" constant="203"/>
-                                    <constraint id="219" firstItem="197" firstAttribute="width" constant="240"/>
+                                    <constraint firstAttribute="height" constant="203" id="218"/>
+                                    <constraint firstAttribute="width" constant="240" id="219"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BadgeScan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="198" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="392" y="763.5" width="240" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BadgeScan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="198">
+                                <rect key="frame" x="87" y="448.5" width="240" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="222"/>
+                                    <constraint firstAttribute="width" constant="240" id="223"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="222" firstItem="198" firstAttribute="height" constant="38"/>
-                                    <constraint id="223" firstItem="198" firstAttribute="width" constant="240"/>
-                                </constraints>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="216" firstItem="197" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX"/>
-                            <constraint id="217" firstItem="Ze5-6b-2t3" firstAttribute="centerY" secondItem="197" secondAttribute="centerY" constant="65"/>
-                            <constraint id="220" firstItem="198" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX"/>
-                            <constraint id="221" firstItem="198" firstAttribute="centerY" secondItem="197" secondAttribute="bottom" constant="63"/>
+                            <constraint firstItem="197" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="216"/>
+                            <constraint firstAttribute="centerY" secondItem="197" secondAttribute="centerY" constant="65" id="217"/>
+                            <constraint firstItem="198" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="220"/>
+                            <constraint firstItem="198" firstAttribute="centerY" secondItem="197" secondAttribute="bottom" constant="63" id="221"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System;
+using System.IO;
 
 namespace BadgeScan
 {
@@ -28,7 +29,7 @@ namespace BadgeScan
 
         public static async Task<Contact> GetContact(string code)
         {
-            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url&$filter=contains({Settings.SearchAttribute},'{code}')";
+            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url,entityimage&$filter=contains({Settings.SearchAttribute},'{code}')";
             HttpResponseMessage response = await client.GetAsync(queryOptions);
             var json = await response.Content.ReadAsStringAsync();
             var contacts = JsonConvert.DeserializeObject<Contacts>(json);

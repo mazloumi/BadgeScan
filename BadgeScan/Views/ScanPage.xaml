@@ -5,7 +5,7 @@
             <zxing:ZXingScannerView x:Name="scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false"/>
             <zxing:ZXingDefaultOverlay TopText="Press Scan" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
         </Grid>
-        <WebView x:Name="Foto" HeightRequest="200" Source="https://nimamazloumi.files.wordpress.com/2018/02/person.png?h=200"/>
+        <Image x:Name="Foto" HeightRequest="200"/>
         <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
         <Button x:Name="ScanButton" Text="Scan" Pressed="Toggle" />
     </StackLayout>
