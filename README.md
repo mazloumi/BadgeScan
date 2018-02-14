@@ -13,11 +13,11 @@ Check out [my blog post](https://wp.me/p9B5ok-v) for more details.
 ## Configuration Steps
 Before running the app, make sure you have completed the below steps.
 
-First configure the `Settings.cs` file:
+First make sure you have the following information available:
 
- - **Resource**: Provide the URL for your trial Dynamics CRM 365 Online system.
- - **Application Id**: Go to your Azure trial and register this application and grant permissions.
- - **SearchAttribute**: Tell you app what attribute of the Entity Contact should be used for the search.
+ - **Resource**: Hostname of your trial Dynamics CRM 365 Online system, e.x. mycomp.crm.microsoft.com
+ - **Application Id**: Application Id provided to you by your Azure trial instance when you register this application and grant permissions.
+ - **SearchAttribute**: Determine which attribute of the Contact entity is used for the barcode lookup. Currently supported options are `contactid`, `employeeid`, `externaluseridentifier`, and `governmentid`.
 
 Now, create some sample data:
 
@@ -26,6 +26,8 @@ Now, create some sample data:
 ## Credits
 This app was created using:
  - ZXing.Net.Mobile.Forms
+ - Xam.Plugin.Settings
+ - Com.Airbnb.Xamarin.Forms.Lottie
  - Newtonsoft.Json
  - Microsoft.IdentityModel.Clients.ActiveDirectory
  - [StackEdit](https://stackedit.io/app)
