@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Xamarin.Forms;
 
 namespace BadgeScan
 {

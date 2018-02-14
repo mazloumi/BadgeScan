@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
-    <Button x:Name="LoginButton" Text="Sign In" VerticalOptions="Center" Clicked="Button_Pressed" HorizontalOptions="Center" />
+<ContentPage xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
+    <StackLayout Orientation="Vertical" Padding="30,30" VerticalOptions="FillAndExpand">
+        <Grid x:Name="Layout" VerticalOptions="FillAndExpand">
+            <forms:AnimationView x:Name="Animation" Animation="loader.json" IsVisible="false" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <StackLayout x:Name="Form" IsVisible="true" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Label Text="Settings" FontAttributes="Bold" FontSize="Large" />
+                <Label Text="D365 Hostname" FontAttributes="Bold" />
+                <Entry x:Name="Hostname" Placeholder="yourcompany.crm.microsoft.com" TextChanged="Handle_Hostname" />
+                <Label Text="Application Id" FontAttributes="Bold" />
+                <Entry x:Name="ApplicationId" Placeholder="88a5b7d5-30a8-9065-bcb1-6379981107bd" TextChanged="Handle_ApplicationId" />
+                <Label Text="Contact Attribute" FontAttributes="Bold" />
+                <Picker x:Name="Attribute" SelectedIndex="1" SelectedIndexChanged="Handle_Attribute">
+                    <Picker.Items>
+                        <x:String>contactid</x:String>
+                        <x:String>employeeid</x:String>
+                        <x:String>externaluseridentifier</x:String>
+                        <x:String>governmentid</x:String>
+                        <x:String>bwc_formerlastname</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="Login" Clicked="Handle_Login" FontAttributes="Bold" FontSize="Large" />
+                <Label x:Name="Result"/>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
 </ContentPage>

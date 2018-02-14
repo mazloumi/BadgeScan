@@ -5,26 +5,52 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System;
-using System.IO;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace BadgeScan
 {
     public static class ServiceProxy
     {
         private static HttpClient client;
+        private static AuthCode resultCode;
 
-        public static async Task Authenticate()
+        public static async Task<AuthCode> Authenticate()
         {
-            var service = DependencyService.Get<IAuth>();
-            var authResult = await service.Authenticate(Settings.Authority, Settings.Resource, Settings.ApplicationId, new Uri(Settings.Resource));
+            try
+            {
+                var service = DependencyService.Get<IAuth>();
+                var auth = await service.Authenticate(Settings.Authority, $"https://{Settings.Resource}", Settings.ApplicationId, new Uri($"https://{Settings.Resource}"));
+                resultCode = AuthCode.Successful;
+                client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
+                client.BaseAddress = new Uri($"https://{Settings.Resource}/api/data/v8.1/");
+                client.Timeout = new TimeSpan(0, 2, 0);
+                client.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
+                client.DefaultRequestHeaders.Add("OData-Version", "4.0");
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            }
+            catch (AdalException adalEx)
+            {
+                switch (adalEx.ErrorCode)
+                {
+                    case "authentication_canceled":
+                        resultCode = AuthCode.Cancelled;
+                        break;
+                    case "access_denied":
+                        resultCode = AuthCode.Denied;
+                        break;
+                    default:
+                        resultCode = AuthCode.Failed;
+                        break;
+                }
+            }
 
-            client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-            client.BaseAddress = new Uri(Settings.Resource + "/api/data/v8.1/");
-            client.Timeout = new TimeSpan(0, 2, 0);
-            client.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
-            client.DefaultRequestHeaders.Add("OData-Version", "4.0");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            catch (Exception ex)
+            {
+                resultCode = AuthCode.Failed;
+                Console.WriteLine($"{resultCode} - {ex.Message}: {ex.StackTrace}");
+            }
+            return resultCode;
         }
 
         public static async Task<Contact> GetContact(string code)

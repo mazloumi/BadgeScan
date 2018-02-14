@@ -8,4 +8,12 @@ namespace BadgeScan
     {
         Task<AuthenticationResult> Authenticate(string authority, string resource, string applicationId, Uri redirectUri);
     }
+
+    public enum AuthCode
+    {
+        Successful,
+        Cancelled,
+        Denied,
+        Failed
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace BadgeScan.iOS
@@ -13,6 +14,8 @@ namespace BadgeScan.iOS
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             LoadApplication(new App());
+
+            AnimationViewRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Lottie.Forms.Droid;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace BadgeScan.Droid
@@ -18,6 +19,8 @@ namespace BadgeScan.Droid
 
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            AnimationViewRenderer.Init();
 
             LoadApplication(new App());
         }

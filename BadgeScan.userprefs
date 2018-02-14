@@ -1,26 +1,17 @@
 ﻿<Properties StartupConfiguration="{73E304DD-EFEB-4E89-B289-CE1B2B8DA0D7}|Default">
-  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.cf1bad082d9bfd6190bafdb90c44c0ea7ceeacaa" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BadgeScan/Model.cs">
-    <Files>
-      <File FileName="iOS/LaunchScreen.storyboard" />
-      <File FileName="BadgeScan/Model.cs" Line="15" Column="38" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F6F0406F-E97A-42F9-9A99-3DAABAD4CE0B" automaticSigning="False" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BadgeScan" expanded="True">
-            <Node name="BadgeScan" expanded="True">
-              <Node name="Services" expanded="True" />
-              <Node name="Model.cs" selected="True" />
-            </Node>
-            <Node name="BadgeScan.iOS" expanded="True" />
+            <Node name="BadgeScan.Droid" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.LGD72298f984dc" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
