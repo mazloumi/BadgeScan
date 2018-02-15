@@ -3,7 +3,7 @@
     <StackLayout>
         <Grid x:Name="ScannerField" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false" />
-            <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Press Search" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
+            <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Press Scan" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
         </Grid>
         <Entry x:Name="SearchField"/>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -11,6 +11,6 @@
             <forms:AnimationView x:Name="Animation" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" />
         </Grid>
         <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
-        <Button x:Name="SearchButton" Text="Search" Pressed="Toggle" />
+        <Button x:Name="SearchButton" Text="Scan" Pressed="Toggle" />
     </StackLayout>
 </ContentPage>
