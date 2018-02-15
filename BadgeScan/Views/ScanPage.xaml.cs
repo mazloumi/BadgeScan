@@ -13,6 +13,7 @@ namespace BadgeScan
             InitializeComponent();
             Foto.Source = ImageSource.FromResource("Person.png");
             SearchField.IsEnabled = !Settings.UseScanner;
+            SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
             ScannerField.IsVisible = Settings.UseScanner;
         }
 

@@ -55,6 +55,18 @@ namespace BadgeScan
             }
         }
 
+        public static string Keyboard
+        {
+            get
+            {
+                return CrossSettings.Current.GetValueOrDefault("Keyboard", string.Empty);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue("Keyboard", value);
+            }
+        }
+
         public static bool UseScanner
         {
             get

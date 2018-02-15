@@ -7,6 +7,11 @@ namespace BadgeScan
 {
     public partial class LoginPage : ContentPage
     {
+        void Handle_Keyboard(object sender, System.EventArgs e)
+        {
+            Settings.Keyboard = Keyboard.Items[Keyboard.SelectedIndex];
+        }
+
         void Handle_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
         {
             Settings.UseScanner = UseScannerField.IsToggled;
@@ -18,6 +23,7 @@ namespace BadgeScan
             Hostname.Text = Settings.Resource;
             ApplicationId.Text = Settings.ApplicationId;
             Attribute.SelectedIndex = Attribute.Items.IndexOf(Settings.SearchAttribute);
+            Keyboard.SelectedIndex = Keyboard.Items.IndexOf(Settings.Keyboard);
             UseScannerField.IsToggled = Settings.UseScanner;
         }
 
