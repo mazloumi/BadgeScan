@@ -1,6 +1,8 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
+using Xamarin.Forms.Platform.iOS;
 
 namespace BadgeScan.iOS
 {
@@ -18,6 +20,13 @@ namespace BadgeScan.iOS
             AnimationViewRenderer.Init();
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        {
+            Console.WriteLine($"AppDelegate.OpenUrl {url.Path}");
+            Extensions.LoadFile(url.Path);
+            return true;
         }
     }
 }

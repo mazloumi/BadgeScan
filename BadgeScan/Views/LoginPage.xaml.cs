@@ -57,7 +57,6 @@ namespace BadgeScan
             {
                 Toggle();
             }
-
         }
 
         void Toggle()

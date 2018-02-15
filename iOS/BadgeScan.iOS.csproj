@@ -139,6 +139,9 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.6.1.1\lib\netstandard2.0\CsvHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -185,6 +188,8 @@
     <BundleResource Include="Resources\Barcode.png" />
     <BundleResource Include="loader.json" />
     <BundleResource Include="loader2.json" />
+    <BundleResource Include="Resources\Icon-App-20x20%401x.png" />
+    <BundleResource Include="Resources\Icon-App-29x29%401x.png" />
   </ItemGroup>
   <Import Project="..\BadgeScan\BadgeScan.projitems" Label="Shared" Condition="Exists('..\BadgeScan\BadgeScan.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

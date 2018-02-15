@@ -31,6 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\IAuth.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ServiceProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
