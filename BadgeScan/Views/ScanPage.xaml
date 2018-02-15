@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
+<ContentPage Title="Scanner" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
     <StackLayout>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false"/>

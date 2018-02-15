@@ -8,7 +8,7 @@ namespace BadgeScan
         public App()
         {
             InitializeComponent();
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
     }
 }

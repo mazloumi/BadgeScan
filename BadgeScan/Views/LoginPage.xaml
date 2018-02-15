@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
+<ContentPage Title="Setup" xmlns:effects="clr-namespace:BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
     <StackLayout Orientation="Vertical" Padding="30,30" VerticalOptions="FillAndExpand">
         <Grid x:Name="Layout" VerticalOptions="FillAndExpand">
             <forms:AnimationView x:Name="Animation" Animation="loader.json" IsVisible="false" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
             <StackLayout x:Name="Form" IsVisible="true" Orientation="Vertical" VerticalOptions="FillAndExpand">
-                <Label Text="Settings" FontAttributes="Bold" FontSize="Large" />
                 <Label Text="D365 Hostname" FontAttributes="Bold" />
-                <Entry x:Name="Hostname" Placeholder="yourcompany.crm.microsoft.com" TextChanged="Handle_Hostname" />
+                <Entry x:Name="Hostname" Placeholder="yourcompany.crm.microsoft.com" TextChanged="Handle_Hostname" FontSize="Small"/>
                 <Label Text="Application Id" FontAttributes="Bold" />
-                <Entry x:Name="ApplicationId" Placeholder="88a5b7d5-30a8-9065-bcb1-6379981107bd" TextChanged="Handle_ApplicationId" />
+                <Entry x:Name="ApplicationId" Placeholder="88a5b7d5-30a8-9065-bcb1-6379981107bd" TextChanged="Handle_ApplicationId" FontSize="Small"/>
                 <Label Text="Contact Attribute" FontAttributes="Bold" />
                 <Picker x:Name="Attribute" SelectedIndex="1" SelectedIndexChanged="Handle_Attribute">
                     <Picker.Items>

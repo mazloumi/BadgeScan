@@ -2,22 +2,31 @@
   <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F6F0406F-E97A-42F9-9A99-3DAABAD4CE0B" automaticSigning="False" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BadgeScan/Views/LoginPage.xaml">
     <Files>
-      <File FileName="BadgeScan/Views/LoginPage.xaml" Line="15" Column="44" />
+      <File FileName="BadgeScan/App.xaml.cs" Line="11" Column="58" />
+      <File FileName="BadgeScan/Views/ScanPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="BadgeScan/Views/LoginPage.xaml.cs" Line="42" Column="84" />
+      <File FileName="BadgeScan/Views/LoginPage.xaml" Line="21" Column="54" />
+      <File FileName="BadgeScan/Views/ScanPage.xaml" Line="2" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BadgeScan" expanded="True">
             <Node name="BadgeScan" expanded="True">
+              <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="LoginPage.xaml" selected="True" />
+                <Node name="LoginPage.xaml" expanded="True" selected="True" />
+                <Node name="ScanPage.xaml" expanded="True" />
               </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
+            <Node name="BadgeScan.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.LGD72298f984dc" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

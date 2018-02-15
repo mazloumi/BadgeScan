@@ -39,7 +39,7 @@ namespace BadgeScan
             if (code == AuthCode.Successful)
             {
                 Toggle();
-                await Navigation.PushModalAsync(new ScanPage());
+                await Navigation.PushModalAsync(new NavigationPage(new ScanPage()));
             }
             else
             {
