@@ -54,5 +54,17 @@ namespace BadgeScan
                 CrossSettings.Current.AddOrUpdateValue("SearchAttribute", value);
             }
         }
+
+        public static bool UseScanner
+        {
+            get
+            {
+                return CrossSettings.Current.GetValueOrDefault("UseScanner", true);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue("UseScanner", value);
+            }
+        }
     }
 }

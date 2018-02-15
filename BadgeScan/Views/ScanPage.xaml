@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Scanner" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
     <StackLayout>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false"/>
-            <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Press Scan" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
+        <Grid x:Name="ScannerField" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false" />
+            <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Press Search" BottomText="Hold the badge in front of the camera" ShowFlashButton="False" Opacity="0.9" />
         </Grid>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">        
-        <Image x:Name="Foto" HeightRequest="200"/>
-    <forms:AnimationView x:Name="Animation" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false"/>        
-    </Grid>
-            <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
-        <Button x:Name="ScanButton" Text="Scan" Pressed="Toggle" />
+        <Entry x:Name="SearchField"/>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image x:Name="Foto" HeightRequest="200" />
+            <forms:AnimationView x:Name="Animation" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" />
+        </Grid>
+        <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
+        <Button x:Name="SearchButton" Text="Search" Pressed="Toggle" />
     </StackLayout>
 </ContentPage>

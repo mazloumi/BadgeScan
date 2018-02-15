@@ -18,6 +18,8 @@
                         <x:String>bwc_formerlastname</x:String>
                     </Picker.Items>
                 </Picker>
+                <Label Text="Use Barcode Scanner?" FontAttributes="Bold" />
+                <Switch x:Name="UseScannerField" Toggled="Handle_Toggled"/>             
                 <Button Text="Login" Clicked="Handle_Login" FontAttributes="Bold" FontSize="Large" />
                 <Label x:Name="Result"/>
             </StackLayout>

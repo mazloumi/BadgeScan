@@ -12,6 +12,8 @@ namespace BadgeScan
         {
             InitializeComponent();
             Foto.Source = ImageSource.FromResource("Person.png");
+            SearchField.IsEnabled = !Settings.UseScanner;
+            ScannerField.IsVisible = Settings.UseScanner;
         }
 
         void OnScanResult(Result result)
@@ -19,8 +21,9 @@ namespace BadgeScan
             Device.BeginInvokeOnMainThread(() =>
             {
                 Toggle(null, null);
-                var res = result.Text;
-                Task.FromResult(Search(res));
+
+                SearchField.Text = result.Text;
+                Task.FromResult(Search(SearchField.Text));
             });
         }
 
@@ -33,11 +36,21 @@ namespace BadgeScan
 
         void Toggle(object sender, EventArgs e)
         {
-            ScanButton.Text = Scanner.IsEnabled ? "Scan" : "Stop";
-            Scanner.IsScanning = !Scanner.IsScanning;
-            Scanner.IsAnalyzing = !Scanner.IsAnalyzing;
-            Scanner.IsEnabled = !Scanner.IsEnabled;
+            if (Settings.UseScanner)
+            {
+                SearchButton.Text = Scanner.IsEnabled ? "Scan" : "Stop";
+                Scanner.IsEnabled = !Scanner.IsEnabled;
+                Scanner.IsScanning = !Scanner.IsScanning;
+                Scanner.IsAnalyzing = !Scanner.IsAnalyzing;
+            }
             Foto.Source = ImageSource.FromResource("Person.png");
+
+            if (!Settings.UseScanner && SearchField.Text != string.Empty)
+            {
+                var code = SearchField.Text.Trim();
+                SearchField.Text = string.Empty;
+                Task.FromResult(Search(code));
+            }
         }
 
         public async Task Search(string code)

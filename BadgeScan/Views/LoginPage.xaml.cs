@@ -7,12 +7,18 @@ namespace BadgeScan
 {
     public partial class LoginPage : ContentPage
     {
+        void Handle_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
+        {
+            Settings.UseScanner = UseScannerField.IsToggled;
+        }
+
         public LoginPage()
         {
             InitializeComponent();
             Hostname.Text = Settings.Resource;
             ApplicationId.Text = Settings.ApplicationId;
             Attribute.SelectedIndex = Attribute.Items.IndexOf(Settings.SearchAttribute);
+            UseScannerField.IsToggled = Settings.UseScanner;
         }
 
         void Handle_Hostname(object sender, Xamarin.Forms.TextChangedEventArgs e)
