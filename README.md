@@ -23,9 +23,22 @@ Now, create some sample data:
 
  - **Creating Sample Contacts** - Go to your D365 site and create a couple of contacts. Provide for each one of them an image and in the attribute you selected enter a unique alpha-numeric code.
  - **Generate barcodes** - Use one of the many online websites to generate barcodes for each of your sample contacts using the same code you entered in D365.
+
+ ## Configuration Steps
+You can create a settings file with the extension `badgescan` that you can open in your mobile device to populate the settings of the application. It must be a comma-separated file with the following format:
+
+    Authority,Resource,ApplicationId,SearchAttribute,Keyboard,UseScanner
+    https://login.windows.net/common/oauth2/authorize,your.crm.dynamics.com,88a4c6e2-40a3-2048-bcb1-6391185507ef,contactid,Numeric,false
+
+The column header are case-sensitive. The permitted values for `SearchAttribute`,`Keyboard`,`UseScanner` are:
+- `SearchAttribute`: `contactid`, `employeeid`, `externaluseridentifier`, and `governmentid`
+- `Keyboard`: `Text`, `Numeric`
+- `UseScanner`: `true`, `false`
+
 ## Credits
 This app was created using:
  - ZXing.Net.Mobile.Forms
+ - CsvHelper
  - Xam.Plugin.Settings
  - Com.Airbnb.Xamarin.Forms.Lottie
  - Newtonsoft.Json
