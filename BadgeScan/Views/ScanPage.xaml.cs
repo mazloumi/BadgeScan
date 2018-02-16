@@ -14,6 +14,7 @@ namespace BadgeScan
             Foto.Source = ImageSource.FromResource("Person.png");
             SearchField.IsEnabled = !Settings.UseScanner;
             SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
+            SearchField.Text = string.Empty;
             ScannerField.IsVisible = Settings.UseScanner;
         }
 
@@ -37,9 +38,11 @@ namespace BadgeScan
 
         void Toggle(object sender, EventArgs e)
         {
+            Name.Text = string.Empty;
+
             if (Settings.UseScanner)
             {
-                SearchButton.Text = Scanner.IsEnabled ? "Scan" : "Stop";
+                SearchButton.Text = Scanner.IsEnabled ? "Start" : "Stop";
                 Scanner.IsEnabled = !Scanner.IsEnabled;
                 Scanner.IsScanning = !Scanner.IsScanning;
                 Scanner.IsAnalyzing = !Scanner.IsAnalyzing;

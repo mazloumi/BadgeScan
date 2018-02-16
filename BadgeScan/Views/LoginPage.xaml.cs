@@ -15,6 +15,7 @@ namespace BadgeScan
         void Handle_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
         {
             Settings.UseScanner = UseScannerField.IsToggled;
+            KeyboardField.IsVisible = !UseScannerField.IsToggled;
         }
 
         public LoginPage()
@@ -25,6 +26,7 @@ namespace BadgeScan
             Attribute.SelectedIndex = Attribute.Items.IndexOf(Settings.SearchAttribute);
             Keyboard.SelectedIndex = Keyboard.Items.IndexOf(Settings.Keyboard);
             UseScannerField.IsToggled = Settings.UseScanner;
+            KeyboardField.IsVisible = !Settings.UseScanner;
         }
 
         void Handle_Hostname(object sender, Xamarin.Forms.TextChangedEventArgs e)
