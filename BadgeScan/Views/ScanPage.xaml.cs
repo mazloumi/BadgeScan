@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing;
+using ZXing.Net.Mobile.Forms;
 
 namespace BadgeScan
 {
@@ -13,6 +14,7 @@ namespace BadgeScan
             InitializeComponent();
             Foto.Source = ImageSource.FromResource("Person.png");
             SearchField.IsEnabled = !Settings.UseScanner;
+            SearchButton.IsVisible = !Settings.UseScanner;
             SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
             SearchField.Text = string.Empty;
             ScannerField.IsVisible = Settings.UseScanner;
@@ -20,44 +22,41 @@ namespace BadgeScan
 
         void OnScanResult(Result result)
         {
+            Scanner = new ZXingScannerView
+            {
+                IsEnabled = true,
+                IsAnalyzing = true,
+                IsScanning = true
+            };
+            Scanner.OnScanResult += OnScanResult;
             Device.BeginInvokeOnMainThread(() =>
             {
-                Toggle(null, null);
-
                 SearchField.Text = result.Text;
-                Task.FromResult(Search(SearchField.Text));
+                Task.FromResult(FindContact(SearchField.Text));
             });
         }
 
-        protected override void OnDisappearing()
+        void Search(object sender, EventArgs e)
         {
-            Scanner.IsScanning = false;
-            Scanner.IsAnalyzing = false;
-            base.OnDisappearing();
-        }
-
-        void Toggle(object sender, EventArgs e)
-        {
-            Name.Text = string.Empty;
-
-            if (Settings.UseScanner)
+            if (SearchField.Text != string.Empty)
             {
-                SearchButton.Text = Scanner.IsEnabled ? "Start" : "Stop";
-                Scanner.IsEnabled = !Scanner.IsEnabled;
-                Scanner.IsScanning = !Scanner.IsScanning;
-                Scanner.IsAnalyzing = !Scanner.IsAnalyzing;
-            }
-            Foto.Source = ImageSource.FromResource("Person.png");
-
-            if (!Settings.UseScanner && SearchField.Text != string.Empty)
-            {
+                Name.Text = string.Empty;
+                Foto.Source = ImageSource.FromResource("Person.png");
                 var code = SearchField.Text.Trim();
                 SearchField.Text = string.Empty;
-                Task.FromResult(Search(code));
+                Task.FromResult(FindContact(code));
             }
         }
 
-        public async Task Search(string code)
+        async void Back(object sender, EventArgs e)
+        {
+            Scanner.IsEnabled = false;
+            Scanner.IsScanning = false;
+            Scanner.IsAnalyzing = false;
+            await Navigation.PopModalAsync();
+        }
+
+        public async Task FindContact(string code)
         {
             Name.Text = $"Searching for {code}";
 

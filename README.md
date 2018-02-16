@@ -39,7 +39,7 @@ The column header are case-sensitive. The permitted values for `SearchAttribute`
 This app was created using:
  - ZXing.Net.Mobile.Forms
  - CsvHelper
- - Xam.Plugin.Settings
+ - Xam.Plugins.Settings
  - Com.Airbnb.Xamarin.Forms.Lottie
  - Newtonsoft.Json
  - Microsoft.IdentityModel.Clients.ActiveDirectory

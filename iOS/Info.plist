@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>BadgeScan</string>
 	<key>CFBundleIdentifier</key>
-	<string>your.company.BadgeScan</string>
+	<string>de.mazloumi.BadgeScan</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -65,7 +65,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>your.company.BadgeScan</string>
+				<string>de.mazloumi.BadgeScan</string>
 			</array>
 		</dict>
 	</array>
@@ -79,7 +79,7 @@
 			<key>UTTypeDescription</key>
 			<string>BadgeScan File</string>
 			<key>UTTypeIdentifier</key>
-			<string>your.company.BadgeScan</string>
+			<string>de.mazloumi.BadgeScan</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

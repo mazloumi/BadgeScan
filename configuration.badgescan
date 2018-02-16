@@ -1,0 +1,2 @@
+Authority,Resource,ApplicationId,SearchAttribute,Keyboard,UseScanner
+https://login.windows.net/common/oauth2/authorize,yourcompany.dynamics.com,88a5b7d5-30a8-9065-bcb1-6379981107bd,contactid,Numeric,false

@@ -19,7 +19,7 @@
                     </Picker.Items>
                 </Picker>
                 <Label Text="Use Barcode Scanner?" FontAttributes="Bold" />
-                <Switch x:Name="UseScannerField" Toggled="Handle_Toggled" />
+                <Switch x:Name="UseScannerField" Toggled="Handle_Toggled" HorizontalOptions="End" />
                 <StackLayout x:Name="KeyboardField" Orientation="Vertical">
                     <Label Text="Keyboard Type" FontAttributes="Bold" />
                     <Picker x:Name="Keyboard" SelectedIndex="1" SelectedIndexChanged="Handle_Keyboard">
@@ -29,8 +29,10 @@
                         </Picker.Items>
                     </Picker>
                 </StackLayout>
-                <Button Text="Login" Clicked="Handle_Login" FontAttributes="Bold" FontSize="Large" />
-                <Label x:Name="Result" />
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Button Text="Login" Clicked="Handle_Login" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="Result" HorizontalOptions="Center" />
+                </StackLayout>
             </StackLayout>
         </Grid>
     </ScrollView>
