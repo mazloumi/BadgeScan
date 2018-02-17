@@ -57,7 +57,7 @@ namespace BadgeScan
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"App.LoadFile Error {ex.Message}, {ex.StackTrace}");
+                Console.WriteLine($"BadgeScan.Extensions.LoadFile Error {ex.Message}, {ex.StackTrace}");
             }
         }
     }

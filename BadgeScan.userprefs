@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{918A73BC-5292-46B8-92AA-32CB352035D0}|Default">
   <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.cf1bad082d9bfd6190bafdb90c44c0ea7ceeacaa" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="BadgeScan" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Properties/AndroidManifest.xml">
+    <Files>
+      <File FileName="Droid/MainActivity.cs" Line="25" Column="40" />
+      <File FileName="Droid/SplashActivity.cs" Line="35" Column="13" />
+      <File FileName="BadgeScan/Services/Extensions.cs" Line="10" Column="28" />
+      <File FileName="Droid/Properties/AndroidManifest.xml" Line="13" Column="16" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.LGD72298f984dc" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.BadgeScan HideGettingStarted="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
