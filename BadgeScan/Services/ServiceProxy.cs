@@ -39,6 +39,9 @@ namespace BadgeScan
                     case "access_denied":
                         resultCode = AuthCode.Denied;
                         break;
+                    case "multiple_matching_tokens_detected":
+                        resultCode = AuthCode.Failed;
+                        break;
                     default:
                         resultCode = AuthCode.Failed;
                         break;

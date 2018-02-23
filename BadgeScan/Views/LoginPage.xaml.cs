@@ -48,9 +48,9 @@ namespace BadgeScan
         {
             Toggle();
 
-            var code = await ServiceProxy.Authenticate();
-            Result.Text = $"Authentication: {code}";
-            if (code == AuthCode.Successful)
+            App.authCode = await ServiceProxy.Authenticate();
+            Result.Text = $"Authentication: {App.authCode}";
+            if (App.authCode == AuthCode.Successful)
             {
                 Toggle();
                 await Navigation.PushModalAsync(new NavigationPage(new ScanPage()));

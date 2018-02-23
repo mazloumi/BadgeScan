@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Setup" xmlns:effects="clr-namespace:BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
     <ScrollView Orientation="Vertical" Padding="30,30" VerticalOptions="FillAndExpand">
-        <Grid x:Name="Layout" VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand">
             <forms:AnimationView x:Name="Animation" Animation="loader.json" IsVisible="false" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
             <StackLayout x:Name="Form" IsVisible="true" Orientation="Vertical" VerticalOptions="FillAndExpand">
                 <Label Text="D365 Hostname" FontAttributes="Bold" />
@@ -15,7 +15,6 @@
                         <x:String>employeeid</x:String>
                         <x:String>externaluseridentifier</x:String>
                         <x:String>governmentid</x:String>
-                        <x:String>bwc_formerlastname</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Text="Use Barcode Scanner?" FontAttributes="Bold" />

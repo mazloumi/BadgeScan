@@ -13,11 +13,24 @@ namespace BadgeScan
         {
             InitializeComponent();
             Foto.Source = ImageSource.FromResource("Person.png");
-            SearchField.IsEnabled = !Settings.UseScanner;
-            SearchButton.IsVisible = !Settings.UseScanner;
-            SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
             SearchField.Text = string.Empty;
-            ScannerField.IsVisible = Settings.UseScanner;
+
+            if (Settings.UseScanner) {
+                SearchField.IsEnabled = false;
+                ScannerField.IsVisible = true;
+                SearchField.Placeholder = "Code appears here";
+                SearchButton.IsVisible = false;
+                Scanner.IsScanning = true;
+                Scanner.IsAnalyzing = true;
+            } else {
+                SearchField.IsEnabled = true;
+                ScannerField.IsVisible = false;
+                SearchField.Placeholder = "Enter code here";
+                SearchButton.IsVisible = true;
+                SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
+                Scanner.IsScanning = false;
+                Scanner.IsAnalyzing = false;
+            }
         }
 
         void OnScanResult(Result result)
@@ -64,7 +77,7 @@ namespace BadgeScan
             try
             {
                 Foto.IsVisible = false;
-                Animation.IsVisible = true;
+                SearchLoop.IsVisible = true;
                 var contact = await ServiceProxy.GetContact(code);
                 Name.Text = $"{contact.firstname} {contact.lastname}";
                 img.Source = ImageSource.FromStream(() => new MemoryStream(System.Convert.FromBase64String(contact.entityimage)));
@@ -72,12 +85,12 @@ namespace BadgeScan
             catch
             {
                 Foto.IsVisible = true;
-                Animation.IsVisible = false;
+                SearchLoop.IsVisible = false;
                 Name.Text = "Person not found";
                 img.Source = ImageSource.FromResource("Person.png");
             }
             Foto.IsVisible = true;
-            Animation.IsVisible = false;
+            SearchLoop.IsVisible = false;
             Foto.Source = img.Source;
         }
     }

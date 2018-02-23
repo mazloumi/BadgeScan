@@ -12,6 +12,7 @@ namespace BadgeScan.iOS
         public async Task<AuthenticationResult> Authenticate(string authority, string resource, string applicationId, Uri returnUri)
         {
             var authContext = new AuthenticationContext(authority);
+            if (authContext.TokenCache.ReadItems().Count() > 1) authContext.TokenCache.Clear();
             if (authContext.TokenCache.ReadItems().Any()) authContext = new AuthenticationContext(authContext.TokenCache.ReadItems().First().Authority);
             var controller = UIApplication.SharedApplication.KeyWindow.RootViewController;
             var platformParams = new PlatformParameters(controller);

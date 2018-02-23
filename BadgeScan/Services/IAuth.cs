@@ -14,6 +14,7 @@ namespace BadgeScan
         Successful,
         Cancelled,
         Denied,
+        MultipleTokens,
         Failed
     }
 }
