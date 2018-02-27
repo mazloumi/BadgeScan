@@ -1,12 +1,12 @@
 
 # BadgeScan
 Cross-platform badge barcode scanner mobile app for iOS and Android using Xamarin.Forms. 
-![Logo](https://nimamazloumi.files.wordpress.com/2018/02/barcode.png?w=305&h=542)
+![Logo](https://nimamazloumi.files.wordpress.com/2018/02/barcode1.png?w=305&h=542)
 
 ## Background
 At conferences and events, participant identification may be a requirement for entering various spaces. This scenario can be addressed in many different ways. Assume in this case that a decision was made to print badges that participants carry with them. The badge shows the name of the participant and has a bar code. Guides at the facility can request the badge of someone to be scanned to the identity. Also assume that no photo of the participant will be printed on the badge. The use case is simple: Scan the badge and the app shows the name and photo of the person.
 
-![Badge Scanner Mobile App using Xamarin.Forms](https://nimamazloumi.files.wordpress.com/2018/02/img_6906.png?w=256&h=256)
+![Badge Scanner Mobile App using Xamarin.Forms](https://nimamazloumi.files.wordpress.com/2018/02/screenshot.png?w=256&h=256)
 
 Check out [my blog post](https://wp.me/p9B5ok-v) for more details.
 
@@ -45,4 +45,3 @@ This app was created using:
  - Microsoft.IdentityModel.Clients.ActiveDirectory
  - [StackEdit](https://stackedit.io/app)
  - [MakeAppIcon](https://makeappicon.com)
- - Icon made by [www.flaticon.com](https://www.flaticon.com/authors/those-icons) and licensed under Creative Commons BY 3.0
