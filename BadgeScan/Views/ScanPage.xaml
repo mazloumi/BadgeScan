@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Text="⚙" Clicked="Back" />
+        <ToolbarItem Order="Primary" IsEnabled="true" Icon="settings.png" Text="⚙" Clicked="Back" />
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Grid x:Name="ScannerField" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

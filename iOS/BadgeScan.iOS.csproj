@@ -200,6 +200,7 @@
     <BundleResource Include="loader2.json" />
     <BundleResource Include="Resources\Icon-App-20x20%401x.png" />
     <BundleResource Include="Resources\Icon-App-29x29%401x.png" />
+    <BundleResource Include="Resources\settings.png" />
   </ItemGroup>
   <Import Project="..\BadgeScan\BadgeScan.projitems" Label="Shared" Condition="Exists('..\BadgeScan\BadgeScan.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
