@@ -6,12 +6,12 @@ using Android.App;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("BadgeScan.Droid")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Cross-platform badge barcode scanner mobile app for iOS and Android using Xamarin.Forms for Microsoft Dynamics CRM 365 Online")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("")]
+[assembly: AssemblyCompany("Nima Mazloumi")]
+[assembly: AssemblyProduct("BadgeScan")]
 [assembly: AssemblyCopyright("${AuthorCopyright}")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("2018 Nima Mazloumi")]
 [assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
