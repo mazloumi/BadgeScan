@@ -1,6 +1,6 @@
 
 # BadgeScan
-Cross-platform badge barcode scanner mobile app for iOS and Android using Xamarin.Forms. 
+Cross-platform badge barcode scanner mobile app for iOS and Android using Xamarin.Forms for Microsoft Dynamics CRM 365 Online 
 ![Logo](https://nimamazloumi.files.wordpress.com/2018/02/barcode1.png?w=305&h=542)
 
 ## Background
