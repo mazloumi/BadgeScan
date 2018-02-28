@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{73E304DD-EFEB-4E89-B289-CE1B2B8DA0D7}|Default">
-  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.cf1bad082d9bfd6190bafdb90c44c0ea7ceeacaa" automaticSigning="True">
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F6F0406F-E97A-42F9-9A99-3DAABAD4CE0B" automaticSigning="True">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="PB277VFGYQ" TeamId="W2WZCN45Y4" />
   </MonoDevelop.Ide.ItemProperties.BadgeScan.iOS>
   <MonoDevelop.Ide.Workbench>
@@ -7,9 +7,14 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BadgeScan" expanded="True">
-            <Node name="BadgeScan" expanded="True" />
-            <Node name="BadgeScan.iOS" expanded="True">
-              <Node name="Info.plist" selected="True" />
+            <Node name="BadgeScan.Droid" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+                <Node name="drawable-hdpi" expanded="True" />
+                <Node name="drawable-xhdpi" expanded="True" />
+                <Node name="drawable-xxhdpi" expanded="True" />
+                <Node name="Resource.designer.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -17,7 +22,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.BadgeScan.Droid PreferredExecutionTarget="Android.LGD72298f984dc" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
   <MonoDevelop.Ide.ItemProperties.BadgeScan HideGettingStarted="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
