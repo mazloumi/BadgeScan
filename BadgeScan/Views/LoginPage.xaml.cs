@@ -47,17 +47,12 @@ namespace BadgeScan
         async void Handle_Login(object sender, System.EventArgs e)
         {
             Toggle();
-
             App.authCode = await ServiceProxy.Authenticate();
             Result.Text = $"Authentication: {App.authCode}";
+            Toggle();
             if (App.authCode == AuthCode.Successful)
             {
-                Toggle();
                 await Navigation.PushModalAsync(new NavigationPage(new ScanPage()));
-            }
-            else
-            {
-                Toggle();
             }
         }
 
