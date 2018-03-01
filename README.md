@@ -41,6 +41,7 @@ This app was created using:
  - ZXing.Net.Mobile.Forms
  - CsvHelper
  - Xam.Plugins.Settings
+ - Plugin.CurrentActivity
  - Com.Airbnb.Xamarin.Forms.Lottie
  - Newtonsoft.Json
  - Microsoft.IdentityModel.Clients.ActiveDirectory
