@@ -5,10 +5,15 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 
+
+#if DEBUG
+[assembly: Application(Debuggable=true)]
+#else
+[assembly: Application(Debuggable = false)]
+#endif
 namespace BadgeScan.Droid
 {
 	//You can specify additional application information in this attribute
-    [Application]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transer)
