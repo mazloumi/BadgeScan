@@ -1,9 +1,7 @@
 using System;
-using Android.App;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using System.Linq;
+using Plugin.CurrentActivity;
 
 [assembly: Xamarin.Forms.Dependency(typeof(BadgeScan.Droid.Auth))]
 namespace BadgeScan.Droid
@@ -12,9 +10,8 @@ namespace BadgeScan.Droid
     {
         public async Task<AuthenticationResult> Authenticate(string authority, string resource, string applicationId, Uri returnUri)
         {
-            var authContext = new AuthenticationContext(authority);
-            if (authContext.TokenCache.ReadItems().Count() > 1) authContext.TokenCache.Clear();
-            var platformParams = new PlatformParameters((Activity)Forms.Context);
+            var authContext = new AuthenticationContext(authority, true, null);
+            var platformParams = new PlatformParameters(CrossCurrentActivity.Current.Activity);
             var authResult = await authContext.AcquireTokenAsync(resource, applicationId, returnUri, platformParams);
             return authResult;
         }
