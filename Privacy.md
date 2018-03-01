@@ -49,6 +49,6 @@ This Privacy Policy may be updated from time to time. Thus, you are adviced to r
 
 # Contact Us
 
-If you have any questions or suggestions about this Privacy Policy, do not hesitate to raise an issue.
+If you have any questions or suggestions about this Privacy Policy, do not hesitate to raise an [issue](https://github.com/mazloumi/BadgeScan/issues/new).
 
 This Privacy Policy page was created at Privacy Policy Template.net.
