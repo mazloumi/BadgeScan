@@ -80,7 +80,7 @@ namespace BadgeScan
             var queryOptions = $"contacts?$select=fullname";
             HttpResponseMessage response = await client.GetAsync(queryOptions);
             var json = await response.Content.ReadAsStringAsync();
-            Console.WriteLine($"{json}");
+            //Console.WriteLine($"{json}");
             var contacts = JsonConvert.DeserializeObject<Contacts>(json);
             //Console.WriteLine($"{contacts.list.Count()}");
             //return contacts.list.Select(c => c.fullname);
