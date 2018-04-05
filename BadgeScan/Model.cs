@@ -15,5 +15,6 @@ namespace BadgeScan
         public string entityimage_url { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
+        public string fullname { get; set; }
     }
 }

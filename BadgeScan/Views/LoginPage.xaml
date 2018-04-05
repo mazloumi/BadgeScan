@@ -15,6 +15,7 @@
                         <x:String>employeeid</x:String>
                         <x:String>externaluseridentifier</x:String>
                         <x:String>governmentid</x:String>
+                        <x:String>fullname</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Text="Use Barcode Scanner?" FontAttributes="Bold" />

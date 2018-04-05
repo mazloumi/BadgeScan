@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using System;
+using UIKit;
 
 namespace BadgeScan.iOS
 {
@@ -6,7 +7,15 @@ namespace BadgeScan.iOS
     {
         static void Main(string[] args)
         {
-            UIApplication.Main(args, null, "AppDelegate");
+            try
+            {
+                UIApplication.Main(args, null, "AppDelegate");
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine($"Error {ex.Message}: {ex.StackTrace}");
+            }
+
         }
     }
 }

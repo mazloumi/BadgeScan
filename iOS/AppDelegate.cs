@@ -3,6 +3,7 @@ using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
+using Xfx;
 
 namespace BadgeScan.iOS
 {
@@ -11,6 +12,8 @@ namespace BadgeScan.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            XfxControls.Init();
+
             global::Xamarin.Forms.Forms.Init();
 
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();

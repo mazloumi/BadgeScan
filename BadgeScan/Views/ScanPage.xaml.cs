@@ -19,14 +19,12 @@ namespace BadgeScan
                 SearchField.IsEnabled = false;
                 ScannerField.IsVisible = true;
                 SearchField.Placeholder = "Code appears here";
-                SearchButton.IsVisible = false;
                 Scanner.IsScanning = true;
                 Scanner.IsAnalyzing = true;
             } else {
                 SearchField.IsEnabled = true;
                 ScannerField.IsVisible = false;
-                SearchField.Placeholder = "Enter code here";
-                SearchButton.IsVisible = true;
+                SearchField.Placeholder = "Enter search phase here";
                 SearchField.Keyboard = (Settings.Keyboard == "Numeric") ? Keyboard.Numeric : Keyboard.Text;
                 Scanner.IsScanning = false;
                 Scanner.IsAnalyzing = false;
@@ -92,6 +90,24 @@ namespace BadgeScan
             Foto.IsVisible = true;
             SearchLoop.IsVisible = false;
             Foto.Source = img.Source;
+        }
+
+        private void OnFocused(object sender, FocusEventArgs e)
+        {
+            Console.WriteLine("Email Focused");
+        }
+
+        private void OnUnfocused(object sender, FocusEventArgs e)
+        {
+            Console.WriteLine("Email Unfocused");
+        }
+
+        private async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            Name.Text = string.Empty;
+            Foto.Source = ImageSource.FromResource("Person.png");
+            var code = SearchField.Text.Trim();
+            await FindContact($"{args.SelectedItem}");
         }
     }
 }

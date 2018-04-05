@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.ScanPage">
+<ContentPage Title="BadgeScan" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:BadgeScan.ViewModels" x:Class="BadgeScan.ScanPage">
+    <ContentPage.BindingContext>
+        <vm:ScanPageViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" IsEnabled="true" Icon="settings.png" Text="⚙" Clicked="Back" />
     </ContentPage.ToolbarItems>
@@ -8,14 +11,11 @@
             <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="true" IsAnalyzing="true" IsScanning="true" />
             <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Hold the badge in front of the camera" Opacity="0.9" />
         </Grid>
-        <Entry x:Name="SearchField" />
+        <xfx:XfxComboBox x:Name="SearchField" ItemSelected="ItemSelected" Focused="OnFocused" Unfocused="OnUnfocused" SelectedItem="{Binding SelectedItem}" Text="{Binding SearchText}" ItemsSource="{Binding Suggestions}" SortingAlgorithm="{Binding SortingAlgorithm}" />
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image x:Name="Foto" HeightRequest="200" />
             <forms:AnimationView x:Name="SearchLoop" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" />
         </Grid>
         <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <Button x:Name="SearchButton" Text="Start" Pressed="Search" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" />
-        </StackLayout>
     </StackLayout>
 </ContentPage>

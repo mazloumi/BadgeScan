@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using System.Collections.Generic;
 
 namespace BadgeScan
 {
@@ -63,6 +64,27 @@ namespace BadgeScan
             var json = await response.Content.ReadAsStringAsync();
             var contacts = JsonConvert.DeserializeObject<Contacts>(json);
             return contacts.value.FirstOrDefault();
+        }
+
+        public static async Task<IEnumerable<Contact>> GetContacts(string code)
+        {
+            var queryOptions = $"contacts?$select=firstname,lastname&$filter=contains({Settings.SearchAttribute},'{code}')";
+            HttpResponseMessage response = await client.GetAsync(queryOptions);
+            var json = await response.Content.ReadAsStringAsync();
+            var contacts = JsonConvert.DeserializeObject<Contacts>(json);
+            return contacts.value;
+        }
+
+        public static async Task<IEnumerable<Contact>> GetAllContacts()
+        {
+            var queryOptions = $"contacts?$select=fullname";
+            HttpResponseMessage response = await client.GetAsync(queryOptions);
+            var json = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"{json}");
+            var contacts = JsonConvert.DeserializeObject<Contacts>(json);
+            //Console.WriteLine($"{contacts.list.Count()}");
+            //return contacts.list.Select(c => c.fullname);
+            return contacts.value;
         }
     }
 }

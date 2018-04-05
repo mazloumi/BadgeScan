@@ -32,10 +32,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ServiceProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScanPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
   </ItemGroup>
 </Project>
