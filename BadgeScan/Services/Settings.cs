@@ -78,5 +78,17 @@ namespace BadgeScan
                 CrossSettings.Current.AddOrUpdateValue("UseScanner", value);
             }
         }
+
+        public static bool Reload
+        {
+            get
+            {
+                return CrossSettings.Current.GetValueOrDefault("Reload", true);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue("Reload", value);
+            }
+        }
     }
 }

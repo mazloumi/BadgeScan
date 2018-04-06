@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using CsvHelper;
 using Xamarin.Forms;
@@ -14,7 +15,7 @@ namespace BadgeScan
                 StreamReader reader = new StreamReader(path);
                 var parser = new CsvParser(reader);
                 var header = parser.Read();
-                //Console.WriteLine($"Header: {string.Join(",", header)}");
+                Debug.WriteLine($"Header: {string.Join(",", header)}");
 
                 while (true)
                 {
@@ -23,7 +24,7 @@ namespace BadgeScan
                     {
                         break;
                     }
-                    //Console.WriteLine($"Row: {string.Join(",", row)}");
+                    Debug.WriteLine($"Row: {string.Join(",", row)}");
 
                     if (header.Length != row.Length) break;
                     for (var i = 0; i < header.Length; i++) {
@@ -50,14 +51,14 @@ namespace BadgeScan
                                 if (Boolean.TryParse(value, out flag)) Settings.UseScanner = flag;
                                 break;
                         }
-                        Console.WriteLine($"{key}: {value}");
+                        Debug.WriteLine($"{key}: {value}");
                     }
                 }
                 App.Current.MainPage = new NavigationPage(new LoginPage());
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"BadgeScan.Extensions.LoadFile Error {ex.Message}, {ex.StackTrace}");
+                Debug.WriteLine($"BadgeScan.Extensions.LoadFile Error {ex.Message}, {ex.StackTrace}");
             }
         }
     }

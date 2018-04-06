@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using BadgeScan.ViewModels;
 using Xamarin.Forms;
 using ZXing;
 using ZXing.Net.Mobile.Forms;
@@ -70,6 +71,7 @@ namespace BadgeScan
         public async Task FindContact(string code)
         {
             Name.Text = $"Searching for {code}";
+            Foto.Source = ImageSource.FromResource("Person.png");
 
             Image img = new Image();
             try
@@ -94,20 +96,18 @@ namespace BadgeScan
 
         private void OnFocused(object sender, FocusEventArgs e)
         {
-            Console.WriteLine("Email Focused");
+            //Debug.WriteLine("Email Focused");
         }
 
         private void OnUnfocused(object sender, FocusEventArgs e)
         {
-            Console.WriteLine("Email Unfocused");
+            //Debug.WriteLine("Email OnUnfocused");
         }
 
         private async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            Name.Text = string.Empty;
-            Foto.Source = ImageSource.FromResource("Person.png");
-            var code = SearchField.Text.Trim();
-            await FindContact($"{args.SelectedItem}");
+            var code = $"{args.SelectedItem}".Trim();
+            await FindContact(code);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.2" package="de.mazloumi.BadgeScan">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.3" package="de.mazloumi.BadgeScan" android:versionCode="3">
 	<uses-sdk android:minSdkVersion="16" />
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />

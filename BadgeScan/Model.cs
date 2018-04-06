@@ -16,5 +16,8 @@ namespace BadgeScan
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string fullname { get; set; }
+        public string employeeid { get; set; }
+        public string externaluseridentifier { get; set; }
+        public string governmentid { get; set; }
     }
 }

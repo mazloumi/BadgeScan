@@ -27,6 +27,7 @@ namespace BadgeScan
             Keyboard.SelectedIndex = Keyboard.Items.IndexOf(Settings.Keyboard);
             UseScannerField.IsToggled = Settings.UseScanner;
             KeyboardField.IsVisible = !Settings.UseScanner;
+            Settings.Reload = true;
         }
 
         void Handle_Hostname(object sender, Xamarin.Forms.TextChangedEventArgs e)
@@ -42,6 +43,7 @@ namespace BadgeScan
         void Handle_Attribute(object sender, System.EventArgs e)
         {
             Settings.SearchAttribute = Attribute.Items[Attribute.SelectedIndex];
+            Settings.Reload = true;
         }
 
         async void Handle_Login(object sender, System.EventArgs e)
