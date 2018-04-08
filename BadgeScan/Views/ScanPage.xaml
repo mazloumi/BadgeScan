@@ -11,7 +11,7 @@
             <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="true" IsAnalyzing="true" IsScanning="true" />
             <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Hold the badge in front of the camera" Opacity="0.9" />
         </Grid>
-        <xfx:XfxComboBox x:Name="SearchField" ItemSelected="ItemSelected" Focused="OnFocused" Unfocused="OnUnfocused" SelectedItem="{Binding SelectedItem}" Text="{Binding SearchText}" ItemsSource="{Binding Suggestions}" SortingAlgorithm="{Binding SortingAlgorithm}" />
+        <xfx:XfxComboBox x:Name="SearchField" ItemSelected="ItemSelected" Focused="OnFocused" Unfocused="OnUnfocused" SelectedItem="{Binding SelectedItem}" Text="{Binding SearchText}" ItemsSource="{Binding Suggestions}" SortingAlgorithm="{Binding SortingAlgorithm}"  />
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image x:Name="Foto" HeightRequest="200" />
             <forms:AnimationView x:Name="SearchLoop" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" />
