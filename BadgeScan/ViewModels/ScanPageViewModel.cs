@@ -33,7 +33,7 @@ namespace BadgeScan.ViewModels
 
         public Func<string, ICollection<string>, ICollection<string>> SortingAlgorithm { get; } = (text, values) =>
         {
-            var list = values.Where(x => x.ToLower().Contains(text.ToLower())).OrderBy(x => x).ToList();
+            var list = values.Where(x => x.ToLower().Contains(text.ToLower())).OrderBy(x => x).Select(s => s.Split(':')[0]).ToList();
             Debug.WriteLine($"{string.Join(",", list)}");
             return list;
         };
@@ -66,7 +66,11 @@ namespace BadgeScan.ViewModels
                             if (!vm.Suggestions.Contains($"{c.governmentid}")) vm.Suggestions.Add($"{c.governmentid}");
                             break;
                         case "fullname":
-                            if (!vm.Suggestions.Contains($"{c.fullname}")) vm.Suggestions.Add($"{c.fullname}");
+                            if (!vm.Suggestions.Contains($"{c.fullname}"))
+                            {
+                                var text = (c.parentcustomerid_account != null) ? $"{c.fullname}:{c.parentcustomerid_account.name}" : $"{c.fullname}:";
+                                vm.Suggestions.Add(text);
+                            }
                             break;
                     }
                 }

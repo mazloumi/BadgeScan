@@ -19,5 +19,11 @@ namespace BadgeScan
         public string employeeid { get; set; }
         public string externaluseridentifier { get; set; }
         public string governmentid { get; set; }
+        public parentcustomerid_account parentcustomerid_account { get; set; }
+    }
+
+    public class parentcustomerid_account
+    {
+        public string name { get; set; }
     }
 }
