@@ -8,7 +8,7 @@ namespace BadgeScan
 {
     public class Extensions
     {
-        public static void LoadFile(string path)
+        public static void LoadFile(string path, bool redirect = true)
         {
             try
             {
@@ -54,12 +54,22 @@ namespace BadgeScan
                         Debug.WriteLine($"{key}: {value}");
                     }
                 }
-                App.Current.MainPage = new NavigationPage(new LoginPage());
+                if (redirect) App.Current.MainPage = new NavigationPage(new LoginPage());
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"BadgeScan.Extensions.LoadFile Error {ex.Message}, {ex.StackTrace}");
             }
+        }
+
+
+        public static void LoadConfiguration(string configuration) {
+
+            var tempFile = Path.GetTempFileName();
+            tempFile = Path.ChangeExtension(tempFile, "badgescan");
+            File.WriteAllText(tempFile, configuration);
+
+            LoadFile(tempFile, false);
         }
     }
 }

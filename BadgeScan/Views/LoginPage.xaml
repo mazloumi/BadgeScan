@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Setup" xmlns:effects="clr-namespace:BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadgeScan.LoginPage">
+<ContentPage Title="Welcome" xmlns:effects="clr-namespace:BadgeScan" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" x:Class="BadgeScan.LoginPage">
     <ScrollView Orientation="Vertical" Padding="30,30" VerticalOptions="FillAndExpand">
-        <Grid VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ScannerField" Orientation="Vertical" IsVisible="false" VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <zxing:ZXingScannerView x:Name="Scanner" OnScanResult="OnScanResult" IsEnabled="false" IsAnalyzing="false" IsScanning="false" />
+                    <zxing:ZXingDefaultOverlay x:Name="Overlay" TopText="Hold the QR code in front of the camera" Opacity="0.9" />
+                </Grid>
+                <Button Text="Back" Clicked="Handle_Cancel" FontSize="Large" />
+            </StackLayout>
             <forms:AnimationView x:Name="Animation" Animation="loader.json" IsVisible="false" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-            <StackLayout x:Name="Form" IsVisible="true" Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="Form" IsVisible="false" Orientation="Vertical" VerticalOptions="FillAndExpand">
                 <Label Text="D365 Hostname" FontAttributes="Bold" />
                 <Entry x:Name="Hostname" Placeholder="yourcompany.crm.microsoft.com" TextChanged="Handle_Hostname" FontSize="Small" />
                 <Label Text="Application Id" FontAttributes="Bold" />
@@ -29,11 +36,14 @@
                         </Picker.Items>
                     </Picker>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Button Text="Login" Clicked="Handle_Login" FontAttributes="Bold" FontSize="Large" />
-                    <Label x:Name="Result" HorizontalOptions="Center" />
-                </StackLayout>
+                <Button Text="Back" Clicked="Handle_Cancel2" FontSize="Large" />
             </StackLayout>
-        </Grid>
+            <StackLayout x:Name="ActionsField" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <Button Text="Setup using QR Code" Clicked="Handle_Scan" FontSize="Large" />
+                <Button Text="Setup Manually" Clicked="Handle_Manual" FontSize="Large" />
+                <Button Text="Login" Clicked="Handle_Login" FontSize="Large" />
+                <Label x:Name="Result" HorizontalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

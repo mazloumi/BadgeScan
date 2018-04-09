@@ -58,11 +58,13 @@ namespace BadgeScan
             return resultCode;
         }
 
-        public static async Task<Contact> GetContact(string code)
+        public static async Task<Contact> GetContact(string contactid)
         {
-            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url,entityimage&$filter=contains({Settings.SearchAttribute},'{code}')";
+            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url,entityimage&$filter=contactid%20eq%20{contactid}";
+            Debug.WriteLine(queryOptions);
             HttpResponseMessage response = await client.GetAsync(queryOptions);
             var json = await response.Content.ReadAsStringAsync();
+            Debug.WriteLine($"{json}");
             var contacts = JsonConvert.DeserializeObject<Contacts>(json);
             return contacts.value.FirstOrDefault();
         }
@@ -70,6 +72,7 @@ namespace BadgeScan
         public static async Task<IEnumerable<Contact>> GetAllContacts()
         {
             var queryOptions = $"contacts?$select=fullname,employeeid,externaluseridentifier,governmentid&$expand=parentcustomerid_account($select=name)";
+            Debug.WriteLine(queryOptions);
             HttpResponseMessage response = await client.GetAsync(queryOptions);
             var json = await response.Content.ReadAsStringAsync();
             Debug.WriteLine($"{json}");

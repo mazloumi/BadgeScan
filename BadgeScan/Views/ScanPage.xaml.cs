@@ -70,28 +70,33 @@ namespace BadgeScan
 
         public async Task FindContact(string code)
         {
-            Name.Text = $"Searching for {code}";
-            Foto.Source = ImageSource.FromResource("Person.png");
+            var vm = BindingContext as ScanPageViewModel;
+            if (vm != null)
+            {
 
-            Image img = new Image();
-            try
-            {
-                Foto.IsVisible = false;
-                SearchLoop.IsVisible = true;
-                var contact = await ServiceProxy.GetContact(code);
-                Name.Text = $"{contact.firstname} {contact.lastname}";
-                img.Source = ImageSource.FromStream(() => new MemoryStream(System.Convert.FromBase64String(contact.entityimage)));
-            }
-            catch
-            {
+                Name.Text = $"Searching for {code}";
+                Foto.Source = ImageSource.FromResource("Person.png");
+
+                Image img = new Image();
+                try
+                {
+                    Foto.IsVisible = false;
+                    SearchLoop.IsVisible = true;
+                    var contact = await ServiceProxy.GetContact(vm.Lookup[code]);
+                    Name.Text = $"{contact.firstname} {contact.lastname}";
+                    img.Source = ImageSource.FromStream(() => new MemoryStream(System.Convert.FromBase64String(contact.entityimage)));
+                }
+                catch
+                {
+                    Foto.IsVisible = true;
+                    SearchLoop.IsVisible = false;
+                    Name.Text = "Person not found";
+                    img.Source = ImageSource.FromResource("Person.png");
+                }
                 Foto.IsVisible = true;
                 SearchLoop.IsVisible = false;
-                Name.Text = "Person not found";
-                img.Source = ImageSource.FromResource("Person.png");
+                Foto.Source = img.Source;
             }
-            Foto.IsVisible = true;
-            SearchLoop.IsVisible = false;
-            Foto.Source = img.Source;
         }
 
         private void OnFocused(object sender, FocusEventArgs e)
@@ -106,8 +111,12 @@ namespace BadgeScan
 
         private async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var code = $"{args.SelectedItem}".Trim();
-            await FindContact(code);
+            var vm = BindingContext as ScanPageViewModel;
+            if (vm != null)
+            {
+                var code = $"{args.SelectedItem}".Trim();
+                await FindContact(code);
+            }
         }
     }
 }
