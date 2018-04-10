@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using UIKit;
 
 namespace BadgeScan.iOS
@@ -13,7 +14,7 @@ namespace BadgeScan.iOS
             }
             catch (System.Exception ex)
             {
-                Console.WriteLine($"Error {ex.Message}: {ex.StackTrace}");
+                Debug.WriteLine($"Error {ex.Message}: {ex.StackTrace}");
             }
 
         }

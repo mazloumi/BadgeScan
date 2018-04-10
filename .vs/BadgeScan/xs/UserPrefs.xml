@@ -1,15 +1,32 @@
 ﻿<Properties StartupConfiguration="{73E304DD-EFEB-4E89-B289-CE1B2B8DA0D7}|Default">
-  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AC8F4F2F-6345-4633-9AB0-7B2C414F4974" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BadgeScan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.c6f8b4c0824d6fc8256a9592eb48b680aa31eb28" automaticSigning="False" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BadgeScan/Views/ScanPage.xaml.cs">
+    <Files>
+      <File FileName="iOS/Info.plist" />
+      <File FileName="BadgeScan/Views/ScanPage.xaml" Line="20" Column="191" />
+      <File FileName="BadgeScan/Views/ScanPage.xaml.cs" Line="77" Column="17" />
+      <File FileName="BadgeScan/Services/ServiceProxy.cs" Line="63" Column="181" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BadgeScan" expanded="True" selected="True" />
+          <Node name="BadgeScan" expanded="True">
+            <Node name="BadgeScan" expanded="True">
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="ScanPage.xaml" expanded="True">
+                  <Node name="ScanPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="BadgeScan.Droid" expanded="True" />
+            <Node name="BadgeScan.iOS" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

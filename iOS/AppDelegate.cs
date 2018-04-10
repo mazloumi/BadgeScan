@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
@@ -27,7 +28,7 @@ namespace BadgeScan.iOS
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-            Console.WriteLine($"AppDelegate.OpenUrl {url.Path}");
+            Debug.WriteLine($"AppDelegate.OpenUrl {url.Path}");
             Extensions.LoadFile(url.Path);
             return true;
         }

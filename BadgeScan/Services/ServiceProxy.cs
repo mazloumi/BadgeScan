@@ -60,7 +60,7 @@ namespace BadgeScan
 
         public static async Task<Contact> GetContact(string contactid)
         {
-            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url,entityimage&$filter=contactid%20eq%20{contactid}";
+            var queryOptions = $"contacts?$select=firstname,lastname,entityimage_url,entityimage&$filter=contactid%20eq%20{contactid}&$expand=parentcustomerid_account($select=name)";
             Debug.WriteLine(queryOptions);
             HttpResponseMessage response = await client.GetAsync(queryOptions);
             var json = await response.Content.ReadAsStringAsync();

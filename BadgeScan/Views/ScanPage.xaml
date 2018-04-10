@@ -17,5 +17,6 @@
             <forms:AnimationView x:Name="SearchLoop" Animation="loader2.json" AutoPlay="True" Loop="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" />
         </Grid>
         <Label x:Name="Name" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" FontFamily="Bold" />
+        <Label x:Name="Account" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small" LineBreakMode="WordWrap"/>
     </StackLayout>
 </ContentPage>
