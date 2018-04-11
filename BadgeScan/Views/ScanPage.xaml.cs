@@ -85,7 +85,7 @@ namespace BadgeScan
                     SearchLoop.IsVisible = true;
                     var contact = await ServiceProxy.GetContact(vm.Lookup[code]);
                     Name.Text = $"{contact.firstname} {contact.lastname}";
-                    if (contact.parentcustomerid_account != null) Account.Text = $"{contact.parentcustomerid_account.name}";
+                    Account.Text = (contact.parentcustomerid_account != null) ? $"{contact.parentcustomerid_account.name}" : "";
                     img.Source = ImageSource.FromStream(() => new MemoryStream(System.Convert.FromBase64String(contact.entityimage)));
                 }
                 catch (Exception ex)
