@@ -56,6 +56,12 @@ namespace BadgeScan.ViewModels
                 vm.Lookup.Clear();
 
                 var contacts = await ServiceProxy.GetAllContacts();
+                if (contacts == null) {
+                    Debug.WriteLine($"Error connecting to D365");
+                    Settings.Reload = false;
+                    return;
+                }
+
                 Debug.WriteLine($"{contacts.Count()} records retrieved from D365");
                 foreach (var c in contacts)
                 {

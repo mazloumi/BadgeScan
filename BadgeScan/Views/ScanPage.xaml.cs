@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using BadgeScan.ViewModels;
 using Xamarin.Forms;
+using Xfx;
 using ZXing;
 using ZXing.Net.Mobile.Forms;
 
@@ -11,6 +12,8 @@ namespace BadgeScan
 {
     public partial class ScanPage : ContentPage
     {
+        private string SearchPhrase = string.Empty;
+
         public ScanPage()
         {
             InitializeComponent();
@@ -72,7 +75,7 @@ namespace BadgeScan
         public async Task FindContact(string code)
         {
             var vm = BindingContext as ScanPageViewModel;
-            if (vm != null)
+            if (vm != null && vm.Lookup.Count > 0)
             {
 
                 Name.Text = $"Searching for {code}";
@@ -94,18 +97,24 @@ namespace BadgeScan
                     Foto.IsVisible = true;
                     SearchLoop.IsVisible = false;
                     Name.Text = "Person not found";
-                    Account.Text = "";
+                    Account.Text = string.Empty;
                     img.Source = ImageSource.FromResource("Person.png");
                 }
                 Foto.IsVisible = true;
                 SearchLoop.IsVisible = false;
                 Foto.Source = img.Source;
             }
+            else
+            {
+                await Navigation.PopModalAsync();
+            }
         }
 
         private void OnFocused(object sender, FocusEventArgs e)
         {
-            //Debug.WriteLine("Email Focused");
+            var text = SearchPhrase;
+            OnClear(null, null);
+            SearchField.Text = text;
         }
 
         private void OnUnfocused(object sender, FocusEventArgs e)
@@ -121,6 +130,20 @@ namespace BadgeScan
                 var code = $"{args.SelectedItem}".Trim();
                 await FindContact(code);
             }
+        }
+
+        void OnClear(object sender, System.EventArgs e)
+        {
+            SearchField.Text = string.Empty;
+            Account.Text = string.Empty;
+            Name.Text = string.Empty;
+            Foto.Source = ImageSource.FromResource("Person.png");
+            SearchPhrase = string.Empty;
+        }
+
+        void OnTextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            SearchPhrase = SearchField.Text;
         }
     }
 }
